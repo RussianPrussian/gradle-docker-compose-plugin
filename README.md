@@ -17,6 +17,8 @@ Simplifies usage of [Docker Compose](https://www.docker.com/docker-compose) for 
 
 `composeLogs` task stores logs from all containers to files in `containerLogToDir` directory.
 
+`composeStopRemoveVolumes` task stops running containers and removes associated volumes. This is useful for doing a clean reset of the volume (possibly a database) without changing the gradle configuration.
+
 ## Quick start
 ```gradle
 buildscript {
