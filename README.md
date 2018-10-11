@@ -9,6 +9,8 @@ Simplifies usage of [Docker Compose](https://www.docker.com/docker-compose) for 
 
 `composeDownForced` task stops the application and removes the containers.
 
+`composeDownRemoveVolumes` task stops/removes running containers and removes associated volumes. This is useful for doing a clean reset of the volume (possibly a database) without changing the gradle configuration.
+
 `composePull` task pulls and optionally builds the images required by the application. This is useful, for example, with a CI platform that caches docker images to decrease build times.
 
 `composeBuild` task builds the services of the application.
@@ -17,7 +19,6 @@ Simplifies usage of [Docker Compose](https://www.docker.com/docker-compose) for 
 
 `composeLogs` task stores logs from all containers to files in `containerLogToDir` directory.
 
-`composeStopRemoveVolumes` task stops running containers and removes associated volumes. This is useful for doing a clean reset of the volume (possibly a database) without changing the gradle configuration.
 
 ## Quick start
 ```gradle
