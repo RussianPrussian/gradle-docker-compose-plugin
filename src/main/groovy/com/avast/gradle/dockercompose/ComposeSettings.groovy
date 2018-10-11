@@ -6,7 +6,7 @@ import com.avast.gradle.dockercompose.tasks.ComposeDownForced
 import com.avast.gradle.dockercompose.tasks.ComposeLogs
 import com.avast.gradle.dockercompose.tasks.ComposePull
 import com.avast.gradle.dockercompose.tasks.ComposePush
-import com.avast.gradle.dockercompose.tasks.ComposeStopRemoveVolumes
+import com.avast.gradle.dockercompose.tasks.ComposeDownRemoveVolumes
 import com.avast.gradle.dockercompose.tasks.ComposeUp
 import com.avast.gradle.dockercompose.tasks.ServiceInfoCache
 import org.gradle.api.Project
@@ -28,7 +28,7 @@ class ComposeSettings {
     final ComposePull pullTask
     final ComposeLogs logsTask
     final ComposePush pushTask
-	final ComposeStopRemoveVolumes stopRemoveVolumesTask
+	final ComposeDownRemoveVolumes downRemoveVolumesTask
     final Project project
     final DockerExecutor dockerExecutor
     final ComposeExecutor composeExecutor
@@ -94,8 +94,8 @@ class ComposeSettings {
         logsTask.settings = this
         pushTask = project.tasks.create(name ? "${name}ComposePush" : 'composePush', ComposePush)
         pushTask.settings = this
-		stopRemoveVolumesTask = project.tasks.create(name ? "${name}ComposeStopRemoveVolumes" : 'composeStopRemoveVolumes', ComposeStopRemoveVolumes)
-		stopRemoveVolumesTask.settings = this
+		downRemoveVolumesTask = project.tasks.create(name ? "${name}ComposeDownRemoveVolumes" : 'composeDownRemoveVolumes', ComposeDownRemoveVolumes)
+		downRemoveVolumesTask.settings = this
 
         this.dockerExecutor = new DockerExecutor(this)
         this.composeExecutor = new ComposeExecutor(this)

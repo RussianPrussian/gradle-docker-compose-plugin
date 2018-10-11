@@ -5,17 +5,17 @@ import org.gradle.api.tasks.TaskAction
 
 import com.avast.gradle.dockercompose.ComposeSettings
 
-public class ComposeStopRemoveVolumes extends DefaultTask {
+public class ComposeDownRemoveVolumes extends DefaultTask {
 	ComposeSettings settings
 	
-	ComposeStopRemoveVolumes() {
+	ComposeDownRemoveVolumes() {
 		group = 'docker'
 		description = '''Removes volumes of docker-compose project and 
-						stops associated containers if necessary'''
+						stops/removes associated containers if necessary'''
 	}
 	
 	@TaskAction
-	void removeVolumes() {
+	void downRemoveVolumes() {
 		settings.serviceInfoCache.clear()
 		String[] args = ['down', '-v']
 		def composeLog = null
