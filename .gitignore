@@ -67,3 +67,6 @@ crashlytics-build.properties
 
 # Vagrant
 .vagrant/
+
+# Mac
+.DS_Store
