@@ -23,7 +23,7 @@ targetCompatibility = '1.8'
 
 group = 'com.avast.gradle'
 archivesBaseName = 'gradle-docker-compose-plugin'
-version = version == 'unspecified' ? 'DEVELOPER-SNAPSHOT' : version
+version = '1'
 
 repositories {
     jcenter()
@@ -77,17 +77,16 @@ bintray {
     }
 }
 
-project.ext.set('gradle.publish.key', System.getenv('GRADLE_PORTAL_KEY'))
-project.ext.set('gradle.publish.secret', System.getenv('GRADLE_PORTAL_SECRET'))
 pluginBundle {
-    website = 'https://github.com/avast/gradle-docker-compose-plugin'
-    vcsUrl = 'https://github.com/avast/gradle-docker-compose-plugin'
-    description = 'Simplifies usage of Docker Compose for integration testing in Gradle environment.'
+    website = 'https://github.com/RussianPrussian/gradle-docker-compose-plugin'
+    vcsUrl = 'https://github.com/RussianPrussian/gradle-docker-compose-plugin'
+    description = 'Simplifies usage of Docker Compose for integration testing in Gradle environment. Extension of the avast plugin'
     tags = ['docker', 'docker-compose', 'gradle']
     plugins {
         dockerComposePlugin {
-            id = 'com.avast.gradle.docker-compose'
-            displayName = 'Gradle Docker Compose plugin'
+            id = 'com.russianprussian.avast.gradle.docker-compose'
+            displayName = 'Gradle Docker Compose plugin extended from avast version'
+			description = 'A plugin to simplify use and integration of docker-compose'
         }
     }
 }
